@@ -1,0 +1,12 @@
+.hero{
+    position: relative;
+}
+.action{
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.hero h1{
+    font-size:3vw;
+}

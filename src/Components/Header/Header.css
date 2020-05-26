@@ -1,0 +1,6 @@
+@media (max-width: 576px) {
+    .header img{
+        margin-left: 5px!important;
+        width: 75px!important;
+    }
+}
