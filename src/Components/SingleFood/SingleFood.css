@@ -1,0 +1,37 @@
+.card img{
+    width: 70%;
+}
+.card{
+    padding: 20px 20px;
+    margin-bottom: 30px;
+    border: none!important;
+    transition: 0.3s all ease-in;
+    -webkit-transition: 0.3s all ease-in;
+    -moz-transition: 0.3s all ease-in;
+    -ms-transition: 0.3s all ease-in;
+    -o-transition: 0.3s all ease-in;
+}
+
+.product-items .card{
+    color:black;
+    margin: 25px auto;
+    width: 18rem;
+    height: 400px;
+    padding: 20px;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+}
+.card:hover{
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px gray;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.product-items .card-image-top{
+    height:220px;
+    padding: 20px 40px;
+}

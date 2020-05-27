@@ -1,0 +1,25 @@
+.cart
+{
+    border-radius: 25px;
+    border: 1px solid lightgrey;
+}
+.cart .btn
+{
+    font-size: 20px;
+    line-height: 30px;
+    background: transparent;
+    padding: 0 10px !important;
+}
+.cart .btn:focus{
+    outline: none!important;
+}
+.left p{
+    color: #6a6a6a;
+    letter-spacing: 1.5px;
+}
+.left h2{
+    margin-bottom: 20px!important;
+}
+.left h3{
+    color: #f91944;
+}

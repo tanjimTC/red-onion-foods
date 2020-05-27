@@ -6,7 +6,7 @@ export const food = [
     price: 8.99,
     slug: "Delicious food to start your breakfast",
     foodDescription:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     foodImage: "Breakfast/breakfast1.png",
   },
   {
@@ -16,7 +16,7 @@ export const food = [
     price: 9.99,
     slug: "Delicious food to start your breakfast",
     foodDescription:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     foodImage: "Breakfast/breakfast2.png",
   },
   {
@@ -26,7 +26,7 @@ export const food = [
     price: 10.99,
     slug: "Delicious food to start your breakfast",
     foodDescription:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     foodImage: "Breakfast/breakfast3.png",
   },
   {
@@ -36,7 +36,7 @@ export const food = [
     price: 6.99,
     slug: "Delicious food to start your breakfast",
     foodDescription:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     foodImage: "Breakfast/breakfast4.png",
   },
   {
@@ -46,7 +46,7 @@ export const food = [
     price: 3.99,
     slug: "Delicious food to start your breakfast",
     foodDescription:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     foodImage: "Breakfast/breakfast5.png",
   },
   {
@@ -56,7 +56,7 @@ export const food = [
     price: 19.99,
     slug: "Delicious food to start your breakfast",
     foodDescription:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
     foodImage: "Breakfast/breakfast6.png",
   },
   {
@@ -67,17 +67,17 @@ export const food = [
     slug: "Delicious food for your empty stomach",
     foodDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacinia augue, at vestibulum felis. Ut diam ipsum, varius vel nibh eu, porttitor ornare sem. Donec sit amet finibus purus. Aliquam ut lobortis tortor. Phasellus sit amet dolor lacus.",
-    foodImage: "../../Image/lunch/lunch1.png",
+    foodImage: "lunch/lunch1.png",
   },
   {
     id: 8,
     foodCategory: "lunch",
-    foodTitle: "Honey Soy Glazed Salmon with Peppers",
+    foodTitle: "Honey Soy Glazed Salmon",
     price: 7.99,
     slug: "Delicious food for your empty stomach",
     foodDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacinia augue, at vestibulum felis. Ut diam ipsum, varius vel nibh eu, porttitor ornare sem. Donec sit amet finibus purus. Aliquam ut lobortis tortor. Phasellus sit amet dolor lacus.",
-    foodImage: "../../Image/lunch/lunch2.png",
+    foodImage: "lunch/lunch2.png",
   },
   {
     id: 9,
@@ -87,7 +87,7 @@ export const food = [
     slug: "Delicious food for your empty stomach",
     foodDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacinia augue, at vestibulum felis. Ut diam ipsum, varius vel nibh eu, porttitor ornare sem. Donec sit amet finibus purus. Aliquam ut lobortis tortor. Phasellus sit amet dolor lacus.",
-    foodImage: "../../Image/lunch/lunch3.png",
+    foodImage: "lunch/lunch3.png",
   },
   {
     id: 10,
@@ -97,7 +97,7 @@ export const food = [
     slug: "Delicious food for your empty stomach",
     foodDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacinia augue, at vestibulum felis. Ut diam ipsum, varius vel nibh eu, porttitor ornare sem. Donec sit amet finibus purus. Aliquam ut lobortis tortor. Phasellus sit amet dolor lacus.",
-    foodImage: "../../Image/lunch/lunch4.png",
+    foodImage: "lunch/lunch4.png",
   },
   {
     id: 11,
@@ -107,7 +107,7 @@ export const food = [
     slug: "Delicious food for your empty stomach",
     foodDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacinia augue, at vestibulum felis. Ut diam ipsum, varius vel nibh eu, porttitor ornare sem. Donec sit amet finibus purus. Aliquam ut lobortis tortor. Phasellus sit amet dolor lacus.",
-    foodImage: "../../Image/lunch/lunch5.png",
+    foodImage: "lunch/lunch5.png",
   },
   {
     id: 12,
@@ -117,7 +117,7 @@ export const food = [
     slug: "Delicious food for your empty stomach",
     foodDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacinia augue, at vestibulum felis. Ut diam ipsum, varius vel nibh eu, porttitor ornare sem. Donec sit amet finibus purus. Aliquam ut lobortis tortor. Phasellus sit amet dolor lacus.",
-    foodImage: "../../Image/lunch/lunch6.png",
+    foodImage: "lunch/lunch6.png",
   },
   {
     id: 13,
@@ -127,7 +127,7 @@ export const food = [
     slug: "Delicious food for your empty stomach",
     foodDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacinia augue, at vestibulum felis. Ut diam ipsum, varius vel nibh eu, porttitor ornare sem. Donec sit amet finibus purus. Aliquam ut lobortis tortor. Phasellus sit amet dolor lacus.",
-    foodImage: "../../Image/Dinner/dinner1.png",
+    foodImage: "Dinner/dinner1.png",
   },
   {
     id: 14,
@@ -137,7 +137,7 @@ export const food = [
     slug: "Delicious food for your empty stomach",
     foodDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacinia augue, at vestibulum felis. Ut diam ipsum, varius vel nibh eu, porttitor ornare sem. Donec sit amet finibus purus. Aliquam ut lobortis tortor. Phasellus sit amet dolor lacus.",
-    foodImage: "../../Image/Dinner/dinner2.png",
+    foodImage: "Dinner/dinner2.png",
   },
   {
     id: 15,
@@ -147,7 +147,7 @@ export const food = [
     slug: "Delicious food for your empty stomach",
     foodDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacinia augue, at vestibulum felis. Ut diam ipsum, varius vel nibh eu, porttitor ornare sem. Donec sit amet finibus purus. Aliquam ut lobortis tortor. Phasellus sit amet dolor lacus.",
-    foodImage: "../../Image/Dinner/dinner3.png",
+    foodImage: "Dinner/dinner3.png",
   },
   {
     id: 16,
@@ -157,7 +157,7 @@ export const food = [
     slug: "Delicious food for your empty stomach",
     foodDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacinia augue, at vestibulum felis. Ut diam ipsum, varius vel nibh eu, porttitor ornare sem. Donec sit amet finibus purus. Aliquam ut lobortis tortor. Phasellus sit amet dolor lacus.",
-    foodImage: "../../Image/Dinner/dinner4.png",
+    foodImage: "Dinner/dinner4.png",
   },
   {
     id: 17,
@@ -167,7 +167,7 @@ export const food = [
     slug: "Delicious food for your empty stomach",
     foodDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacinia augue, at vestibulum felis. Ut diam ipsum, varius vel nibh eu, porttitor ornare sem. Donec sit amet finibus purus. Aliquam ut lobortis tortor. Phasellus sit amet dolor lacus.",
-    foodImage: "../../Image/Dinner/dinner5.png",
+    foodImage: "Dinner/dinner5.png",
   },
   {
     id: 18,
@@ -177,6 +177,6 @@ export const food = [
     slug: "Delicious food for your empty stomach",
     foodDescription:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas eget lacinia augue, at vestibulum felis. Ut diam ipsum, varius vel nibh eu, porttitor ornare sem. Donec sit amet finibus purus. Aliquam ut lobortis tortor. Phasellus sit amet dolor lacus.",
-    foodImage: "../../Image/Dinner/dinner6.png",
+    foodImage: "Dinner/dinner6.png",
   },
 ];
