@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from "react";
 import './Details.css';
 import { food } from "../../data/food";
+import { useParams } from 'react-router-dom';
 
 const Details = (props) => {
-  console.log(props);
+  const {foodID} = useParams() ;
   const [foodDescription, setFoodDescription] = useState([]);
   const [count, setCount] = useState(1);
   useEffect(() => {
-    const foodID = props.match.params.id;
+    // const foodID = props.match.params.id;
     const foodDetails = food.find((x) => x.id === parseInt(foodID));
-    console.log(foodDetails.price);
     setFoodDescription(foodDetails);
-  }, [props.match.params.id]);
+  }, [foodID]);
+
+  const handleClick =()=>{
+    foodDescription.quantity = count
+    props.handleCart(foodDescription);
+  }
+
   return (
     <div className="container mt-5">
       <div className="row">
@@ -38,8 +44,10 @@ const Details = (props) => {
                 >
                   +
                 </button>
-              </div>
+              </div> 
             </div>
+            <button onClick={handleClick} className="cart btn add mt-2">
+             <span><img src="https://cdn0.iconfinder.com/data/icons/shopping-icons-5/100/Cart-32.png" alt="icon"/></span> Add</button>
           </div>
         </div>
         <div className="col-md-6 p-4">
@@ -51,6 +59,7 @@ const Details = (props) => {
             />
           )}
         </div>
+        
       </div>
     </div>
   );

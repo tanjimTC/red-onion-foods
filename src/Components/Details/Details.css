@@ -22,4 +22,23 @@
 }
 .left h3{
     color: #f91944;
+    margin-top: 3px;
 }
+.add{
+    background:#f91944 ;
+    color: white;
+    padding: 5px 20px;
+}
+.add img{
+    margin-right: 7px;
+} 
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+    outline: none!important;
+    box-shadow: none;
+}
+
