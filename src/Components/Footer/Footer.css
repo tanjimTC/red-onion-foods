@@ -1,0 +1,18 @@
+.footer{
+    background-color: #191919;
+    padding: 30px;
+    margin-top: 20px;
+}
+.list-unstyled  a{
+    color: #a7a7a7;
+    text-decoration: none!important;
+    line-height: 35px;
+}
+.footer-bottom p{
+    color: #a7a7a7;
+}
+@media only screen and (max-width : 600px){
+    .footer img{
+        width: 50%!important;
+    }
+}

@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Details from "./Components/Details/Details";
 import NotFound from "./Components/NotFound/NotFound";
 import CartDetails from "./Components/CartDetails/CartDetails";
+import Footer from "./Components/Footer/Footer";
 function App() {
   const initialState = JSON.parse(localStorage.getItem('cart')) || []
   const [cart, setCart] = useState(initialState);
@@ -47,6 +48,7 @@ function App() {
             <NotFound />
           </Route>
         </Switch>
+        <Footer/>
       </Router>
     </div>
   );

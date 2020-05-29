@@ -2,8 +2,8 @@ import React, { useState } from "react";
 
 const WhyDetail = (props) => {
   const { whyCause, whyDescription, whyImage, whyLogo } = props.whyUS;
-  const [isCollapsed, setIsCollapsed] = useState(false);
-
+  const [isCollapsed, setIsCollapsed] = useState(true);
+  // const text = whyDescription.substring(0, 50)
   return (
     <div className="col-md-4">
       <div className="row">
@@ -29,10 +29,29 @@ const WhyDetail = (props) => {
             {whyCause}
           </h5>
           <p className="mt-0 mb-5" style={{ marginLeft: "40px" }}>
-            {whyDescription} <br />
-            <button style={{ color: "#F91962" }} className="btn see-button">
-              see more <i class="fas fa-arrow-circle-right"></i>
-            </button>
+            {isCollapsed ? (
+              <React.Fragment>
+                {whyDescription.substring(0, 50)}...
+                <button
+                  onClick={() => setIsCollapsed(false)}
+                  style={{ color: "#F91962" }}
+                  className="btn see-button"
+                >
+                  see more <i className="fas fa-arrow-circle-right"></i>
+                </button>
+              </React.Fragment>
+            ) : (
+              <React.Fragment>
+                {whyDescription}
+                <button
+                  onClick={() => setIsCollapsed(true)}
+                  style={{ color: "#F91962" }}
+                  className="btn see-button"
+                >
+                   <i className="fas fa-arrow-circle-left"></i> see less
+                </button>
+              </React.Fragment>
+            )}
           </p>
         </div>
       </div>

@@ -186,7 +186,7 @@ export const whyUS =[
     id: 1,
     whyCause : 'Fast Delivery',
     whyDescription:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     whyImage: "whyUS/whyUs1.png",
     whyLogo : "whyUS/Group1.png"
   },
@@ -194,7 +194,7 @@ export const whyUS =[
     id: 2,
     whyCause : 'A Good Auto Responder',
     whyDescription:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     whyImage: "whyUS/whyUs2.png",
     whyLogo : "whyUS/Group2.png"
   },
@@ -202,7 +202,7 @@ export const whyUS =[
     id: 3,
     whyCause : 'Home Delivery',
     whyDescription:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
     whyImage: "whyUS/whyUs3.png",
     whyLogo : "whyUS/Group3.png"
   },

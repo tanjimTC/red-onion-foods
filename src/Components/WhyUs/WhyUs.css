@@ -1,6 +1,7 @@
 .see-button{
     background: transparent;
 }
-.fa-arrow-circle-right{
+.fa-arrow-circle-right,
+.fa-arrow-circle-left{
     color: #7AC948;
 }
