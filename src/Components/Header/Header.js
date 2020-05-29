@@ -18,12 +18,12 @@ const Header = (props) => {
         </Link>
       </nav>
       <div className="headerCart">
-        <Link to='/cart-details' style={{textDecoration :'none' , color :'black'}}>
+        {props.cart.length?(<Link to='/cart-details' style={{textDecoration :'none' , color :'black'}}>
         <i className="fas fa-shopping-cart"></i>
         <sup style={{ color: "#f91944" }}>
           <b>{props.cart.length}</b>
         </sup>
-        </Link>
+        </Link>) : (<i style={{cursor : 'not-allowed'}} className="fas fa-shopping-cart"></i>)}
         <button className="btn btn-1">Login</button>
         <button className="btn btn-2">Sign up</button>
       </div>

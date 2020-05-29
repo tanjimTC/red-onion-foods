@@ -31,7 +31,7 @@ const Details = (props) => {
               <div className="cart ml-3 btn">
                 <button
                   className="btn"
-                  onClick={()=> {if(count > 0){
+                  onClick={()=> {if(count > 1){
                       setCount(count-1)
                   }}}
                 >

@@ -180,3 +180,27 @@ export const food = [
     foodImage: "Dinner/dinner6.png",
   },
 ];
+
+export const whyUS =[
+  {
+    id: 1,
+    whyDescription:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    whyImage: "whyUS/whyUs1.png",
+    whyLogo : "whyUS/Group1.png"
+  },
+  {
+    id: 2,
+    whyDescription:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    whyImage: "whyUS/whyUs2.png",
+    whyLogo : "whyUS/Group2.png"
+  },
+  {
+    id: 3,
+    whyDescription:
+      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    whyImage: "whyUS/whyUs3.png",
+    whyLogo : "whyUS/Group3.png"
+  },
+];

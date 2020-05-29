@@ -17,6 +17,18 @@ function App() {
       setCart(newCart)
     }
   }
+  const removeFromCart=(key , qty)=>{
+    console.log(cart);
+    cart.map(x=> {
+      if(x.id === key){
+        x.quantity = qty
+      }
+      console.log(x);
+      return x;
+    })
+    const notZeroQuantity = cart.filter(pd => pd.quantity > 0);
+    setCart(notZeroQuantity);
+  }
   return (
     <div className="App">
       <Router>
@@ -29,7 +41,7 @@ function App() {
            <Details handleCart={handleCart}  />
           </Route>
           <Route path='/cart-details'>
-            <CartDetails cart={cart} />
+            <CartDetails removeFromCart={removeFromCart}  cart={cart} />
           </Route>
           <Route path="*">
             <NotFound />
