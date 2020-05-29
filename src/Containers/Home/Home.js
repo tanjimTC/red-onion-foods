@@ -3,11 +3,11 @@ import Hero from '../../Components/Hero/Hero';
 import Food from '../../Components/Food/Food';
 import WhyUs from '../../Components/WhyUs/WhyUs';
 
-const Home = () => {
+const Home = (props) => {
     return (
         <div>
             <Hero/>
-            <Food/>
+            <Food cart={props.cart}/>
             <WhyUs/>
         </div>
     );

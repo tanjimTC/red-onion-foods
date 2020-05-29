@@ -42,3 +42,26 @@
     box-shadow: none;
 }
 
+.success-msg
+{
+    animation: show-hide 2s ease-in-out  1 forwards;
+    font-style: italic;
+    color:white;
+    border-radius: 5px;
+    padding: 3px;
+}
+@keyframes show-hide{
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    75%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+

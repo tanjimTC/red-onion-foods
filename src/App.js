@@ -17,8 +17,12 @@ function App() {
     if(!isAddedAlready){
       setCart(newCart)
     }
+    console.log(food);
+    // if(!food){
+    //   window.location.pathname=`/details/${food.id}`
+    // }
   }
-  const removeFromCart=(key , qty)=>{
+  const removeFromCart=(key,qty)=>{
     console.log(cart);
     cart.map(x=> {
       if(x.id === key){
@@ -30,19 +34,22 @@ function App() {
     const notZeroQuantity = cart.filter(pd => pd.quantity > 0);
     setCart(notZeroQuantity);
   }
+  const resetCart =()=>{
+    setCart([])
+  }
   return (
     <div className="App">
       <Router>
         <Header cart={cart} />
         <Switch>
           <Route exact path="/">
-            <Home />
+            <Home cart={cart} />
           </Route>
           <Route path="/details/:foodID"> 
            <Details handleCart={handleCart}  />
           </Route>
           <Route path='/cart-details'>
-            <CartDetails removeFromCart={removeFromCart}  cart={cart} />
+            <CartDetails resetCart={resetCart} removeFromCart={removeFromCart}  cart={cart} />
           </Route>
           <Route path="*">
             <NotFound />

@@ -23,3 +23,18 @@
     background: transparent;
     color: #f91944;
 }
+.cart-container h3{
+    color: #f91944!important;
+}
+.cart-review-top{
+    position: relative;
+}
+.cart-review-top-btn{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color:#f91944!important ;
+    color: white;
+    font-size: 12px;
+    padding: 5px 10px;
+}

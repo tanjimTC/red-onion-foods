@@ -14,7 +14,7 @@ const Details = (props) => {
   }, [foodID]);
 
   const handleClick =()=>{
-    foodDescription.quantity = count
+    foodDescription.quantity = count;
     props.handleCart(foodDescription);
   }
 

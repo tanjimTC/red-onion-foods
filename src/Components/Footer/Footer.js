@@ -59,9 +59,9 @@ const Footer = () => {
       <div className="container">
       <div className="row footer-bottom text-center">
         <div className="col-md-4 d-flex justify-content-around align-items-center">
-          <p>Privacy Policy.</p>
-          <p> Terms of Use</p>
-          <p> Pricing Policy</p>
+          <p><small>Privacy Policy.</small></p>
+          <p> <small>Terms of Use</small></p>
+          <p> <small>Pricing Policy</small></p>
         </div>
         <div className="col-md-4 ">
           <p>
@@ -71,7 +71,7 @@ const Footer = () => {
           </p>
         </div>
         <div className="col-md-4 ">
-            <p style={{color : '#a7a7a7'}}>Developed by Tanjim (<span style={{color:'#F91944'}}>The Nerd</span>)</p>
+            <small style={{color : '#a7a7a7'}}>Developed by Tanjim (<span style={{color:'#F91944'}}>The Nerd</span>)</small>
         </div>
       </div>
       </div>

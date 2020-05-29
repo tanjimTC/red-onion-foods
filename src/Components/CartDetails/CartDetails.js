@@ -3,8 +3,20 @@ import "./CartDetails.css";
 const CartDetails = (props) => {
   const Orders = props.cart;
   return (
-    <div className="cart-container container">
-        <center><h3 className='mb-5'>Order Summary</h3></center>
+    <div>
+      {props.cart.length?(
+      <div className="cart-container container">
+      <div className="cart-review-top">
+        <h3 className="mb-5">Cart review</h3>
+        <button onClick={props.resetCart} className="btn cart-review-top-btn">
+          <img
+            className="img-fluid mr-1"
+            src="https://cdn0.iconfinder.com/data/icons/outlined-buttons-pack/200/signs_alert-32.png"
+            alt=""
+          />
+          Reset cart
+        </button>
+      </div>
       <div className="row ">
         {Orders.map((x) => (
           <div key={x.id} className="col-md-4 ">
@@ -20,9 +32,23 @@ const CartDetails = (props) => {
               </div>
               <div className=" cart-box p-3">
                 <h6>{x.foodTitle}</h6>
-                <button onClick={()=>{props.removeFromCart(x.id , x.quantity-1)}} className="cart-button btn">-</button>
+                <button
+                  onClick={() => {
+                    props.removeFromCart(x.id, x.quantity - 1);
+                  }}
+                  className="cart-button btn"
+                >
+                  -
+                </button>
                 {x.quantity}
-                <button onClick={()=>{props.removeFromCart(x.id , x.quantity+1)}} className="cart-button btn">+</button>
+                <button
+                  onClick={() => {
+                    props.removeFromCart(x.id, x.quantity + 1);
+                  }}
+                  className="cart-button btn"
+                >
+                  +
+                </button>
                 <p style={{ color: "#f91944" }}>
                   $<b>{x.price * x.quantity}</b>{" "}
                 </p>
@@ -32,7 +58,19 @@ const CartDetails = (props) => {
         ))}
       </div>
     </div>
-  );
+    ):(
+      <div>
+        <h2 className='p-5 mt-5'>
+          <center>
+            Currently your cart is empty please select food to place order. <br/>
+            <img src="https://cdn3.iconfinder.com/data/icons/food-round/64/Food_hamburger_and_aeration-128.png" className='img-fluid mt-3' alt=""/> 
+          </center>
+        </h2>
+      </div>
+    )}
+  
+    </div>
+    );
 };
 
 export default CartDetails;

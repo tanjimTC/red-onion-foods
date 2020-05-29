@@ -14,3 +14,11 @@ nav li .active
 {
     margin:35px 0px;
 }
+.review-button {
+    background-color: #f91944;
+    padding: 5px 30px;
+    color: #fff;
+}
+.cart-review .disabled{
+    cursor: not-allowed!important;
+}
