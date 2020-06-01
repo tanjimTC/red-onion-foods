@@ -10,7 +10,7 @@ const Header = (props) => {
       <nav className="navbar navbar-expand-lg navbar-light">
         <Link className="navbar-brand" to="/">
           <img
-            style={{ width: "100px" }}
+            style={{ width: "130px" }}
             className="logo img-fluid ml-2"
             src={logo}
             alt="logo"
@@ -23,12 +23,12 @@ const Header = (props) => {
           style={{ textDecoration: "none", color: "black" }}
         >
           <i className="fas fa-shopping-cart"></i>
-          <sup style={{ color: "#f91944" }}>
+          {props.cart.length?(<sup style={{ color: "#f91944" }}>
             <b>{props.cart.length}</b>
-          </sup>
+          </sup>) : ''}
         </Link>
         <button className="btn btn-1">Login</button>
-        <button className="btn btn-2">Sign up</button>
+        <Link to='/signup' className="btn btn-2">Sign up</Link>
       </div>
     </div>
   );

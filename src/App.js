@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./App.css";
 import Header from "./Components/Header/Header";
 import Home from "./Containers/Home/Home";
@@ -7,36 +7,33 @@ import Details from "./Components/Details/Details";
 import NotFound from "./Components/NotFound/NotFound";
 import CartDetails from "./Components/CartDetails/CartDetails";
 import Footer from "./Components/Footer/Footer";
+import Login from "./Components/SignUp/SignUp";
 function App() {
-  const initialState = JSON.parse(localStorage.getItem('cart')) || []
+  const initialState = JSON.parse(localStorage.getItem("cart")) || [];
   const [cart, setCart] = useState(initialState);
 
-  const handleCart =(food)=>{
-    const isAddedAlready = cart.find( x=> x.id === food.id);
-    const newCart = [...cart , food];
-    if(!isAddedAlready){
-      setCart(newCart)
+  const handleCart = (food) => {
+    const isAddedAlready = cart.find((x) => x.id === food.id);
+    const newCart = [...cart, food];
+    if (!isAddedAlready) {
+      setCart(newCart);
     }
-    console.log(food);
-    // if(!food){
-    //   window.location.pathname=`/details/${food.id}`
-    // }
-  }
-  const removeFromCart=(key,qty)=>{
     console.log(cart);
-    cart.map(x=> {
-      if(x.id === key){
-        x.quantity = qty
+  };
+  const removeFromCart = (key, qty) => {
+    console.log(cart);
+    cart.map((x) => {
+      if (x.id === key) {
+        x.quantity = qty;
       }
-      console.log(x);
       return x;
-    })
-    const notZeroQuantity = cart.filter(pd => pd.quantity > 0);
+    });
+    const notZeroQuantity = cart.filter((pd) => pd.quantity > 0);
     setCart(notZeroQuantity);
-  }
-  const resetCart =()=>{
-    setCart([])
-  }
+  };
+  const resetCart = () => {
+    setCart([]);
+  };
   return (
     <div className="App">
       <Router>
@@ -45,17 +42,24 @@ function App() {
           <Route exact path="/">
             <Home cart={cart} />
           </Route>
-          <Route path="/details/:foodID"> 
-           <Details handleCart={handleCart}  />
+          <Route path="/details/:foodID">
+            <Details cart={cart} handleCart={handleCart} />
           </Route>
-          <Route path='/cart-details'>
-            <CartDetails resetCart={resetCart} removeFromCart={removeFromCart}  cart={cart} />
+          <Route path="/cart-details">
+            <CartDetails
+              resetCart={resetCart}
+              removeFromCart={removeFromCart}
+              cart={cart}
+            />
+          </Route>
+          <Route path="/signup">
+            <Login />
           </Route>
           <Route path="*">
             <NotFound />
           </Route>
         </Switch>
-        <Footer/>
+        <Footer />
       </Router>
     </div>
   );

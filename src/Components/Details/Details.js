@@ -12,6 +12,7 @@ const Details = (props) => {
     // const foodID = props.match.params.id;
     const foodDetails = food.find((x) => x.id === parseInt(foodID));
     setFoodDescription(foodDetails);
+    window.scrollTo(0, 0);
   }, [foodID]);
 
   const handleClick = () => {
@@ -21,7 +22,7 @@ const Details = (props) => {
   };
 
   if (successMsg) {
-    setTimeout(() => setSuccessMsg(false), 1500);
+    setTimeout(() => setSuccessMsg(true), 1500);
   }
 
   return (
@@ -58,7 +59,7 @@ const Details = (props) => {
                 <span>
                   <img
                     src="https://cdn0.iconfinder.com/data/icons/shopping-icons-5/100/Cart-32.png"
-                    alt="icon"
+                    alt="add"
                   />
                 </span>{" "}
                 Add
@@ -71,7 +72,7 @@ const Details = (props) => {
                   <span>
                     <img
                       src="https://cdn0.iconfinder.com/data/icons/healthy-17/64/eat-eating-food-32.png"
-                      alt=""
+                      alt="added"
                     />
                   </span>{" "}
                   Items Added To Cart!
@@ -85,7 +86,7 @@ const Details = (props) => {
             <img
               className="img-fluid"
               src={require(`../../Image/${foodDescription.foodImage}`)}
-              alt="d"
+              alt="foodImage"
             />
           )}
         </div>

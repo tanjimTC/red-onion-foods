@@ -4,6 +4,7 @@ import Food from '../../Components/Food/Food';
 import WhyUs from '../../Components/WhyUs/WhyUs';
 
 const Home = (props) => {
+    window.scrollTo(0, 0);
     return (
         <div>
             <Hero/>

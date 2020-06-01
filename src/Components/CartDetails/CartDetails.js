@@ -6,8 +6,8 @@ const CartDetails = (props) => {
     <div>
       {props.cart.length?(
       <div className="cart-container container">
-      <div className="cart-review-top">
-        <h3 className="mb-5">Cart review</h3>
+      <div className="mb-5 cart-review-top d-flex justify-content justify-content-between align-items-center">
+        <h3 className="">Cart Review</h3>
         <button onClick={props.resetCart} className="btn cart-review-top-btn">
           <img
             className="img-fluid mr-1"
@@ -62,7 +62,7 @@ const CartDetails = (props) => {
       <div>
         <h2 className='p-5 mt-5'>
           <center>
-            Currently your cart is empty please select food to place order. <br/>
+            Currently your cart is empty. <img src="https://cdn1.iconfinder.com/data/icons/ui-basic-8/64/x-19-32.png" alt=""/> <br/> <br/> Please add foods to your cart to place order. <br/> <br/>
             <img src="https://cdn3.iconfinder.com/data/icons/food-round/64/Food_hamburger_and_aeration-128.png" className='img-fluid mt-3' alt=""/> 
           </center>
         </h2>
