@@ -1,17 +1,14 @@
 import React from "react";
 import { useFormik, Formik } from "formik";
-import Auth from "./use-auth";
+// import Auth from "./use-auth";
 import "./SignUp.css";
+import { Link } from "react-router-dom";
+import Auth from "./useAuth";
 const initialValues = {
   name: "",
   email: "",
   password: "",
   password2: "",
-};
-
-const onSubmit = (values) => {
-  const auth = Auth();
-  auth.createUser(values.email, values.password);
 };
 
 const validate = (values) => {
@@ -40,9 +37,9 @@ const validate = (values) => {
 };
 
 const SignUp = () => {
+  const auth=Auth();
   const formik = useFormik({
     initialValues,
-    onSubmit,
     validate,
   });
   return (
@@ -50,7 +47,7 @@ const SignUp = () => {
       <div className='form-image text-center'>
         <img className=" img-fluid" src={require("../../logo2.png")} alt="" />
       </div>
-      <form className='signup-form' onSubmit={formik.handleSubmit}>
+      <form className='signup-form' onSubmit={auth.handleSignUp}>
         <div className="form-group ">
           <div className="input-group ">
             <div className="input-group-prepend">
@@ -130,7 +127,7 @@ const SignUp = () => {
             <div className="input-group-prepend">
               <span className="input-group-text  text-white">
                 
-                <i class="fas fa-check-double"></i>
+                <i className="fas fa-check-double"></i>
               </span>
             </div>
             {/* <label htmlFor="password2">confirm password</label> */}
@@ -154,6 +151,7 @@ const SignUp = () => {
           create account
         </button>
       </form>
+      <p className='mt-2' style={{color :'#666'}}>already have an account? <Link style={{color :'#f91944 '}} to='/login' >sign in</Link></p>
     </div>
   );
 };

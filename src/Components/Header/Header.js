@@ -23,12 +23,28 @@ const Header = (props) => {
           style={{ textDecoration: "none", color: "black" }}
         >
           <i className="fas fa-shopping-cart"></i>
-          {props.cart.length?(<sup style={{ color: "#f91944" }}>
-            <b>{props.cart.length}</b>
-          </sup>) : ''}
+          {props.cart.length ? (
+            <sup style={{ color: "#f91944" }}>
+              <b>{props.cart.length}</b>
+            </sup>
+          ) : (
+            ""
+          )}
         </Link>
-        <button className="btn btn-1">Login</button>
-        <Link to='/signup' className="btn btn-2">Sign up</Link>
+        <Link
+          to="/login"
+          className="btn btn-1"
+          style={{ textDecoration: "none", color: "black" }}
+        >
+          Login
+        </Link>
+        <Link
+          to="/signup"
+          className="btn btn-2"
+          style={{ textDecoration: "none", color: "#fff" }}
+        >
+          Sign up
+        </Link>
       </div>
     </div>
   );

@@ -7,7 +7,9 @@ import Details from "./Components/Details/Details";
 import NotFound from "./Components/NotFound/NotFound";
 import CartDetails from "./Components/CartDetails/CartDetails";
 import Footer from "./Components/Footer/Footer";
-import Login from "./Components/SignUp/SignUp";
+import SignUp from "./Components/SignUp/SignUp";
+import SignIn from "./Components/SignIn/SignIn";
+import { AuthProvider } from "./Components/SignUp/useAuth";
 function App() {
   const initialState = JSON.parse(localStorage.getItem("cart")) || [];
   const [cart, setCart] = useState(initialState);
@@ -36,31 +38,39 @@ function App() {
   };
   return (
     <div className="App">
-      <Router>
-        <Header cart={cart} />
-        <Switch>
-          <Route exact path="/">
-            <Home cart={cart} />
-          </Route>
-          <Route path="/details/:foodID">
-            <Details cart={cart} handleCart={handleCart} />
-          </Route>
-          <Route path="/cart-details">
-            <CartDetails
-              resetCart={resetCart}
-              removeFromCart={removeFromCart}
-              cart={cart}
-            />
-          </Route>
-          <Route path="/signup">
-            <Login />
-          </Route>
-          <Route path="*">
-            <NotFound />
-          </Route>
-        </Switch>
-        <Footer />
-      </Router>
+      <AuthProvider>
+        <Router>
+          <Header cart={cart} />
+          <Switch>
+            <Route exact path="/">
+              <Home cart={cart} />
+            </Route>
+            <Route path="/details/:foodID">
+              <Details cart={cart} handleCart={handleCart} />
+            </Route>
+            <Route path="/cart-details">
+              <CartDetails
+                resetCart={resetCart}
+                removeFromCart={removeFromCart}
+                cart={cart}
+              />
+            </Route>
+            <Route path="/signup">
+              <SignUp />
+            </Route>
+            <Route path="/login">
+              <SignIn />
+            </Route>
+            {/* <Route path='/ddd'>
+            <Sign/>
+          </Route> */}
+            <Route path="*">
+              <NotFound />
+            </Route>
+          </Switch>
+          <Footer />
+        </Router>
+      </AuthProvider>
     </div>
   );
 }
