@@ -140,7 +140,7 @@ export const PrivateRoute = ({ children, ...rest }) => {
     <Route
       {...rest}
       render={({ location }) =>
-        auth.user ? (
+        auth.currentUser ? (
           children
         ) : (
           <Redirect
@@ -157,7 +157,6 @@ export const PrivateRoute = ({ children, ...rest }) => {
 
 const Auth = () => {
   const [currentUser, setCurrentUser] = useState(null);
-  console.log(currentUser);
   const [pending, setPending] = useState(true);
   const onSubmit = useCallback(async (event) => {
     event.preventDefault();
@@ -191,6 +190,7 @@ const Auth = () => {
           setCurrentUser(signedInUser);
           return res.user;
         });
+      event.target.reset();
     } catch (error) {
       alert(error);
     }

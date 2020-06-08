@@ -84,11 +84,21 @@ const SignIn = () => {
             <div className="none">none</div>
           )}
         </div>
-        <button className="btn text-white  btn-block " type="submit">
+        {auth.currentUser?(
+          <div>
+            <p>Hi {auth.currentUser.name} !</p>
+            <button className="btn text-white disabled btn-block " type="submit">
+         logged in
+        </button>
+          </div>
+        ):(
+          <button className="btn text-white  btn-block" type="submit">
           log in
         </button>
-        {/* <button onClick={auth.signInWithGoogle}>in</button> */}
+        )}
       </form>
+      <br/>
+      {auth.currentUser?<button className='btn review-button' onClick={auth.signOut}>sign out</button>:''}
     </div>
   );
 };

@@ -9,7 +9,8 @@ import CartDetails from "./Components/CartDetails/CartDetails";
 import Footer from "./Components/Footer/Footer";
 import SignUp from "./Components/SignUp/SignUp";
 import SignIn from "./Components/SignIn/SignIn";
-import { AuthProvider } from "./Components/SignUp/useAuth";
+import { AuthProvider, PrivateRoute } from "./Components/SignUp/useAuth";
+import Checkout from "./Components/Checkout/Checkout";
 function App() {
   const initialState = JSON.parse(localStorage.getItem("cart")) || [];
   const [cart, setCart] = useState(initialState);
@@ -61,9 +62,9 @@ function App() {
             <Route path="/login">
               <SignIn />
             </Route>
-            {/* <Route path='/ddd'>
-            <Sign/>
-          </Route> */}
+            <PrivateRoute path="/checkout">
+              <Checkout cart={cart} />
+            </PrivateRoute>
             <Route path="*">
               <NotFound />
             </Route>

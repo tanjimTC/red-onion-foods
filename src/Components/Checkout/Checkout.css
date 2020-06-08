@@ -1,0 +1,14 @@
+
+.from-container-checkout input,
+.from-container-checkout textarea{
+    background-color: #f5f5f5;
+    margin-bottom: 10px!important;
+}
+.checkout{
+    margin: 40px 10px;
+}
+.checkoutDetails{
+    align-items: center;
+    background-color: #f5f5f5;
+    margin-bottom: 10px!important;
+}

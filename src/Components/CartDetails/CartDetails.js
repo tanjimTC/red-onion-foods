@@ -1,6 +1,9 @@
 import React from "react";
 import "./CartDetails.css";
+import { Link } from "react-router-dom";
+import Auth from "../SignUp/useAuth";
 const CartDetails = (props) => {
+  const auth = Auth();
   const Orders = props.cart;
   return (
     <div>
@@ -57,6 +60,21 @@ const CartDetails = (props) => {
           </div>
         ))}
       </div>
+      {auth.currentUser ? (
+          <center>
+            <Link to='/checkout'>
+            <button className="btn  review-button my-3">
+              place order
+            </button>
+            </Link>
+          </center>
+        ) : (
+          <center>
+            <button className="btn disabled review-button my-3">
+            log in to place order
+            </button>
+          </center>
+        )}
     </div>
     ):(
       <div>
@@ -68,6 +86,8 @@ const CartDetails = (props) => {
         </h2>
       </div>
     )}
+
+    
   
     </div>
     );
