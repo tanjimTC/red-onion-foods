@@ -60,7 +60,7 @@ const SignIn = () => {
             <div className="none">none</div>
           )}
         </div>
-        <div className="form-group ">
+        <div className="form-group">
           <div className="input-group ">
             <div className="input-group-prepend">
               <span className="input-group-text  text-white">
@@ -84,21 +84,30 @@ const SignIn = () => {
             <div className="none">none</div>
           )}
         </div>
-        {auth.currentUser?(
+        {auth.currentUser ? (
           <div>
             <p>Hi {auth.currentUser.name} !</p>
-            <button className="btn text-white disabled btn-block " type="submit">
-         logged in
-        </button>
+            <button
+              className="btn text-white disabled btn-block "
+              type="submit"
+            >
+              logged in
+            </button>
           </div>
-        ):(
+        ) : (
           <button className="btn text-white  btn-block" type="submit">
-          log in
-        </button>
+            log in
+          </button>
         )}
       </form>
-      <br/>
-      {auth.currentUser?<button className='btn review-button' onClick={auth.signOut}>sign out</button>:''}
+      <br />
+      {auth.currentUser ? (
+        <button className="btn review-button" onClick={auth.signOut}>
+          sign out
+        </button>
+      ) : (
+        ""
+      )}
     </div>
   );
 };

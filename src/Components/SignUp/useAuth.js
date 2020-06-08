@@ -190,7 +190,7 @@ const Auth = () => {
           setCurrentUser(signedInUser);
           return res.user;
         });
-      event.target.reset();
+        window.location.pathname='/'
     } catch (error) {
       alert(error);
     }

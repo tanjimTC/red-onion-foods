@@ -34,7 +34,7 @@ const WhyDetail = (props) => {
                 {whyDescription.substring(0, 50)}...
                 <button
                   onClick={() => setIsCollapsed(false)}
-                  style={{ color: "#F91962" }}
+                  style={{ color: "#FF4F65" }}
                   className="btn see-button"
                 >
                   see more <i className="fas fa-arrow-circle-right"></i>
@@ -45,7 +45,7 @@ const WhyDetail = (props) => {
                 {whyDescription}
                 <button
                   onClick={() => setIsCollapsed(true)}
-                  style={{ color: "#F91962" }}
+                  style={{ color: "#FF4F65" }}
                   className="btn see-button"
                 >
                    <i className="fas fa-arrow-circle-left"></i> see less

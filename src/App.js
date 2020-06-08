@@ -11,6 +11,7 @@ import SignUp from "./Components/SignUp/SignUp";
 import SignIn from "./Components/SignIn/SignIn";
 import { AuthProvider, PrivateRoute } from "./Components/SignUp/useAuth";
 import Checkout from "./Components/Checkout/Checkout";
+import PlaceOrder from "./Components/PlaceOrder/PlaceOrder";
 function App() {
   const initialState = JSON.parse(localStorage.getItem("cart")) || [];
   const [cart, setCart] = useState(initialState);
@@ -21,7 +22,6 @@ function App() {
     if (!isAddedAlready) {
       setCart(newCart);
     }
-    console.log(cart);
   };
   const removeFromCart = (key, qty) => {
     console.log(cart);
@@ -61,6 +61,9 @@ function App() {
             </Route>
             <Route path="/login">
               <SignIn />
+            </Route>
+            <Route path='/place-order'>
+              <PlaceOrder/>
             </Route>
             <PrivateRoute path="/checkout">
               <Checkout cart={cart} />
