@@ -8,7 +8,7 @@ const CartDetails = (props) => {
   return (
     <div>
       {props.cart.length?(
-      <div className="cart-container container">
+      <div className="cart-container container mb-4">
       <div className="mb-5 cart-review-top d-flex justify-content justify-content-between align-items-center">
         <h3 className="">Cart Review</h3>
         <button onClick={props.resetCart} className="btn cart-review-top-btn">

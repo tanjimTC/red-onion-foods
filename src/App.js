@@ -62,9 +62,9 @@ function App() {
             <Route path="/login">
               <SignIn />
             </Route>
-            <Route path='/place-order'>
+            <PrivateRoute path='/place-order'>
               <PlaceOrder/>
-            </Route>
+            </PrivateRoute>
             <PrivateRoute path="/checkout">
               <Checkout cart={cart} />
             </PrivateRoute>

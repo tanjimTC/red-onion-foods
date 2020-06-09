@@ -95,7 +95,7 @@ const SignIn = () => {
             </button>
           </div>
         ) : (
-          <button className="btn text-white  btn-block" type="submit">
+          <button  className="btn text-white  btn-block" type="submit">
             log in
           </button>
         )}

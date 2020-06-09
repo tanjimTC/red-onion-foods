@@ -158,7 +158,8 @@ export const PrivateRoute = ({ children, ...rest }) => {
 const Auth = () => {
   const [currentUser, setCurrentUser] = useState(null);
   const [pending, setPending] = useState(true);
-  const onSubmit = useCallback(async (event) => {
+  const  onSubmit = useCallback(async (event ) => {
+    console.log(event.target.input);
     event.preventDefault();
     const { email, password } = event.target.elements;
     console.log(email.value, password.value);
@@ -170,6 +171,7 @@ const Auth = () => {
           const { displayName, email, photoURL } = res.user;
           const signedInUser = { name: displayName, email, photo: photoURL };
           setCurrentUser(signedInUser);
+          window.history.back();
           return res.user;
         });
     } catch (error) {
@@ -188,9 +190,9 @@ const Auth = () => {
           const { email } = res.user;
           const signedInUser = { name: name.value, email };
           setCurrentUser(signedInUser);
+          window.history.back();
           return res.user;
         });
-        window.location.pathname='/'
     } catch (error) {
       alert(error);
     }
