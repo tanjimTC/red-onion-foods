@@ -1,77 +1,118 @@
 import React, { useState } from "react";
+import { useForm } from "react-hook-form";
 import "./Checkout.css";
 import { Link } from "react-router-dom";
 const Checkout = (props) => {
+  const { register, handleSubmit, reset, errors } = useForm();
+  console.log(props.deliveryDetails);
   const [active, setActive] = useState(false);
   const Orders = props.cart;
   const subtotal = Orders.reduce((x, y) => x + y.price * y.quantity, 0);
   const qty = Orders.reduce((x, y) => x + y.quantity, 0);
   const tax = (2 / 100) * subtotal.toFixed(2);
   const total = subtotal + tax;
-  const handleConfirm = (event) => {
-    event.preventDefault();
+  // const handleConfirm = (event) => {
+  //   event.preventDefault();
+  //   setActive(true);
+  // };
+  const onSubmit = (data) => {
     setActive(true);
+    props.deliveryDetailsHandler(data);
   };
   return (
     <div className="container">
       <div className="row checkout align-items-center justify-content-between">
         <div className="col-md-6">
           <div className="from-container-checkout">
-            <form>
+            <form onSubmit={handleSubmit(onSubmit)} name="details-from">
               <h4>Delivery Details</h4>
               <hr />
               <div className="form-group ">
                 <div className="input-group ">
                   <input
                     type="text"
+                    name="place"
                     className="form-control"
-                    placeholder="Place"
-                    required
+                    placeholder="place"
+                    ref={register({ required: true })}
                   />
                 </div>
-              </div>
-              <div className="form-group ">
-                <div className="input-group ">
-                  <input
-                    type="email"
-                    className="form-control "
-                    placeholder="Road no"
-                  />
-                </div>
+                {errors.place && (
+                  <span className="error">This Option is required</span>
+                )}
               </div>
               <div className="form-group ">
                 <div className="input-group ">
                   <input
                     type="text"
-                    className="form-control"
-                    placeholder="Flat,suite or floor"
-                    required
+                    name="road"
+                    className="form-control "
+                    placeholder="Road no"
+                    ref={register({ required: true })}
                   />
                 </div>
+                {errors.road && (
+                  <span className="error">This Option is required</span>
+                )}
               </div>
               <div className="form-group ">
                 <div className="input-group ">
                   <input
-                    type="email"
-                    className="form-control "
-                    placeholder="Business name"
+                    type="text"
+                    name="flat"
+                    className="form-control"
+                    placeholder="Flat,suite or floor"
+                    ref={register({ required: true })}
                   />
                 </div>
+                {errors.flat && (
+                  <span className="error">This Option is required</span>
+                )}
+              </div>
+              <div className="form-group ">
+                <div className="input-group ">
+                  <input
+                    type="text"
+                    name="businessName"
+                    className="form-control "
+                    placeholder="Business name"
+                    ref={register({ required: true })}
+                  />
+                </div>
+                {errors.businessName && (
+                  <span className="error">This Option is required</span>
+                )}
               </div>
               <div className="form-group ">
                 <div className="input-group ">
                   <textarea
                     className="form-control "
+                    name="address"
                     placeholder="Add delivery instruction"
+                    ref={register({ required: true })}
                   ></textarea>
                 </div>
+                {errors.address && (
+                  <span className="error">This Option is required</span>
+                )}
               </div>
-              <button
-                onClick={handleConfirm}
-                className="review-button btn btn-block"
-              >
-                Save & continue
-              </button>
+              {props.deliveryDetails.place ? (
+                <div>
+                  <small className="error">
+                    please reload page to edit delivery details
+                  </small>
+                  <button
+                    type="submit"
+                    className="review-button btn btn-block disabled"
+                  >
+                    details provided
+                  </button>
+                </div>
+              ) : (
+                <button type="submit" className="review-button btn btn-block">
+                  Save & continue
+                </button>
+              )}
             </form>
           </div>
         </div>
@@ -124,13 +165,13 @@ const Checkout = (props) => {
                 <div className="total">total</div>
                 <div className="total">{total.toFixed(2)}</div>
               </div>
-              {active ? (
+              {props.deliveryDetails.place ? (
                 <Link
                   style={{ textDecoration: "none", color: "white" }}
                   className="review-button  mt-2 btn btn-block"
-                  to='/place-order'
+                  to="/payment"
                 >
-                  place order
+                  proceed to payment
                 </Link>
               ) : (
                 <div className="mt-2">
@@ -138,7 +179,7 @@ const Checkout = (props) => {
                     please provide delivery details to active this button
                   </span>
                   <button className="review-button disabled  btn btn-block">
-                    place order
+                    proceed to payment
                   </button>
                 </div>
               )}

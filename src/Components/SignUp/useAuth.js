@@ -190,7 +190,7 @@ const Auth = () => {
           const { email } = res.user;
           const signedInUser = { name: name.value, email };
           setCurrentUser(signedInUser);
-          window.history.back();
+          window.location.pathname='/'
           return res.user;
         });
     } catch (error) {

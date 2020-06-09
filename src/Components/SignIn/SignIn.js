@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useFormik } from "formik";
 import Auth from "../SignUp/useAuth";
 const initialValues = {
@@ -24,7 +24,6 @@ const validate = (values) => {
 
 const SignIn = () => {
   const auth = Auth();
-  // console.log(auth);
   const formik = useFormik({
     initialValues,
     validate,

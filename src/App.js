@@ -12,10 +12,20 @@ import SignIn from "./Components/SignIn/SignIn";
 import { AuthProvider, PrivateRoute } from "./Components/SignUp/useAuth";
 import Checkout from "./Components/Checkout/Checkout";
 import PlaceOrder from "./Components/PlaceOrder/PlaceOrder";
+import CreditCard from "./Components/CreditCard/CreditCard";
 function App() {
   const initialState = JSON.parse(localStorage.getItem("cart")) || [];
   const [cart, setCart] = useState(initialState);
-
+  const [deliveryDetails, setDeliveryDetails] = useState({
+    place: null,
+    road: null,
+    flat: null,
+    businessName: null,
+    address: null,
+  });
+  const deliveryDetailsHandler = (data) => {
+    setDeliveryDetails(data);
+  };
   const handleCart = (food) => {
     const isAddedAlready = cart.find((x) => x.id === food.id);
     const newCart = [...cart, food];
@@ -62,11 +72,18 @@ function App() {
             <Route path="/login">
               <SignIn />
             </Route>
-            <PrivateRoute path='/place-order'>
-              <PlaceOrder/>
+            <Route path="/payment">
+              <CreditCard />
+            </Route>
+            <PrivateRoute path="/place-order">
+              <PlaceOrder deliveryDetails={deliveryDetails} />
             </PrivateRoute>
             <PrivateRoute path="/checkout">
-              <Checkout cart={cart} />
+              <Checkout
+                cart={cart}
+                deliveryDetails={deliveryDetails}
+                deliveryDetailsHandler={deliveryDetailsHandler}
+              />
             </PrivateRoute>
             <Route path="*">
               <NotFound />
