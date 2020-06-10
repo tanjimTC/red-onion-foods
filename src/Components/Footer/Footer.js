@@ -93,13 +93,6 @@ const Footer = () => {
               {" "}
               <small>Terms & Conditions</small>
             </Link>
-            <Link
-              style={{ textDecoration: "none", color: "#A7A7A7" }}
-              to="/privacy"
-            >
-              {" "}
-              <small>Pricing Policy</small>
-            </Link>
           </div>
           <div className="col-md-4 ">
             <p>
