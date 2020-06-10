@@ -6,14 +6,16 @@ import "react-credit-cards/es/styles-compiled.css";
 import { Link } from "react-router-dom";
 
 const CreditCard = () => {
+  window.scrollTo(0, 0);
   const { register, handleSubmit, errors } = useForm();
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
   const [expiry, setExpiry] = useState("");
   const [cvc, setCvc] = useState("");
   const [focus, setFocus] = useState("");
+  const [paid, setPaid] = useState(false);
   const onSubmit = (data) => {
-    console.log(data);
+    setPaid(true);
   };
   return (
     <React.Fragment>
@@ -116,16 +118,41 @@ const CreditCard = () => {
             ) : (
               <span className="none">none</span>
             )}
-            <Link
-              to="/place-order"
-              style={{ textDecoration: "none", color: "white" }}
+
+            <button
+              style={{ display: paid ? "none" : "block" }}
+              type="submit"
+              className="review-button btn btn-block"
             >
-              <button type="submit" className="review-button btn btn-block">
-                Pay
-              </button>
-            </Link>
+              Pay
+            </button>
+            <div className="img">
+              <center style={{ display: paid ? "block" : "none" }}>
+                <p><img
+                  src="https://cdn3.iconfinder.com/data/icons/e-commerce-trading/512/paid-64.png"
+                  alt=""
+                /> <span className='error'> fake though</span> <br/> <img src="https://cdn4.iconfinder.com/data/icons/comic-colored/512/as_995-64.png" alt=""/></p>
+              </center>
+            </div>
           </form>
         </div>
+        <center>
+        {paid?(<Link
+          className="review-button btn"
+          to="/place-order"
+          style={{ textDecoration: "none", color: "white" }}
+        >
+          continue
+        </Link>):(
+          <Link
+          className="review-button btn mt-5 disabled"
+          to="/place-order"
+          style={{ textDecoration: "none", color: "white" }}
+        >
+          please pay to continue
+        </Link>
+        )}
+        </center>
       </div>
     </React.Fragment>
   );

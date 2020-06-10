@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useFormik } from "formik";
 import Auth from "../SignUp/useAuth";
+import { Link } from "react-router-dom";
 const initialValues = {
   email: "",
   password: "",
@@ -23,6 +24,7 @@ const validate = (values) => {
 };
 
 const SignIn = () => {
+  window.scrollTo(0, 0);
   const auth = Auth();
   const formik = useFormik({
     initialValues,
@@ -92,21 +94,26 @@ const SignIn = () => {
             >
               logged in
             </button>
+            <p className='mt-2' style={{color :'#000'}}>proceed to <Link style={{color :'#f91944 '}} to='/checkout' >check out?</Link></p>
           </div>
         ) : (
-          <button  className="btn text-white  btn-block" type="submit">
+          <React.Fragment>
+            <button className="btn text-white  btn-block" type="submit">
             log in
           </button>
+          <p className='mt-2' style={{color :'#666'}}>don't have an account? <Link style={{color :'#f91944 '}} to='/signup' >sign up</Link></p>
+          </React.Fragment>
         )}
       </form>
-      <br />
+      
+      {/* <br />
       {auth.currentUser ? (
         <button className="btn review-button" onClick={auth.signOut}>
           sign out
         </button>
       ) : (
         ""
-      )}
+      )} */}
     </div>
   );
 };

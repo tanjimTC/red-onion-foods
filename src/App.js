@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./App.css";
 import Header from "./Components/Header/Header";
 import Home from "./Containers/Home/Home";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Details from "./Components/Details/Details";
 import NotFound from "./Components/NotFound/NotFound";
 import CartDetails from "./Components/CartDetails/CartDetails";
@@ -13,6 +13,8 @@ import { AuthProvider, PrivateRoute } from "./Components/SignUp/useAuth";
 import Checkout from "./Components/Checkout/Checkout";
 import PlaceOrder from "./Components/PlaceOrder/PlaceOrder";
 import CreditCard from "./Components/CreditCard/CreditCard";
+import Privacy from "./Components/Privacy/Privacy";
+import Terms from "./Components/Terms/Terms";
 function App() {
   const initialState = JSON.parse(localStorage.getItem("cart")) || [];
   const [cart, setCart] = useState(initialState);
@@ -34,7 +36,6 @@ function App() {
     }
   };
   const removeFromCart = (key, qty) => {
-    console.log(cart);
     cart.map((x) => {
       if (x.id === key) {
         x.quantity = qty;
@@ -72,11 +73,14 @@ function App() {
             <Route path="/login">
               <SignIn />
             </Route>
-            <Route path="/payment">
+            <PrivateRoute path="/payment">
               <CreditCard />
-            </Route>
+            </PrivateRoute>
             <PrivateRoute path="/place-order">
-              <PlaceOrder deliveryDetails={deliveryDetails} />
+              <PlaceOrder
+                deliveryDetails={deliveryDetails}
+                deliveryDetailsHandler={deliveryDetailsHandler}
+              />
             </PrivateRoute>
             <PrivateRoute path="/checkout">
               <Checkout
@@ -85,6 +89,12 @@ function App() {
                 deliveryDetailsHandler={deliveryDetailsHandler}
               />
             </PrivateRoute>
+            <Route path="/privacy">
+              <Privacy />
+            </Route>
+            <Route path='/terms-condition'>
+                <Terms/>
+            </Route>
             <Route path="*">
               <NotFound />
             </Route>

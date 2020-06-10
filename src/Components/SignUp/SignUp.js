@@ -1,6 +1,5 @@
 import React from "react";
-import { useFormik, Formik } from "formik";
-// import Auth from "./use-auth";
+import { useFormik } from "formik";
 import "./SignUp.css";
 import { Link } from "react-router-dom";
 import Auth from "./useAuth";

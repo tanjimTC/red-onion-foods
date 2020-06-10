@@ -157,12 +157,9 @@ export const PrivateRoute = ({ children, ...rest }) => {
 
 const Auth = () => {
   const [currentUser, setCurrentUser] = useState(null);
-  const [pending, setPending] = useState(true);
   const  onSubmit = useCallback(async (event ) => {
-    console.log(event.target.input);
     event.preventDefault();
     const { email, password } = event.target.elements;
-    console.log(email.value, password.value);
     try {
       await firebaseConfig
         .auth()

@@ -2,11 +2,11 @@ import React from "react";
 import "./Header.css";
 import logo from "../../logo2.png";
 import { Link } from "react-router-dom";
-import Auth from "../SignUp/useAuth";
+import  { useAuth } from "../SignUp/useAuth";
 
 const Header = (props) => {
   localStorage.setItem("cart", JSON.stringify(props.cart));
-  const auth=Auth();
+  const auth=useAuth();
   const handleSignOut =()=>{
     auth.signOut()
     window.location.pathname='/login'
@@ -39,9 +39,11 @@ const Header = (props) => {
           )}
         </Link>
         {auth.currentUser?(
-          <span style={{ color: "#f91944" }}>
-            Hi<b> {auth.currentUser.name}</b> !
-          </span>
+          <small style={{ color: "#f91944" }}>
+            Hi<b> {auth.currentUser.name?(
+              <span>{auth.currentUser.name}</span>
+            ):('')}</b> !
+          </small>
         ):(
           <Link
           to="/login"

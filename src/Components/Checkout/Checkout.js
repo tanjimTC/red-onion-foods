@@ -1,22 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import "./Checkout.css";
 import { Link } from "react-router-dom";
 const Checkout = (props) => {
-  const { register, handleSubmit, reset, errors } = useForm();
-  console.log(props.deliveryDetails);
-  const [active, setActive] = useState(false);
+  window.scrollTo(0, 0);
+  const { register, handleSubmit, errors } = useForm();
   const Orders = props.cart;
   const subtotal = Orders.reduce((x, y) => x + y.price * y.quantity, 0);
   const qty = Orders.reduce((x, y) => x + y.quantity, 0);
   const tax = (2 / 100) * subtotal.toFixed(2);
   const total = subtotal + tax;
-  // const handleConfirm = (event) => {
-  //   event.preventDefault();
-  //   setActive(true);
-  // };
   const onSubmit = (data) => {
-    setActive(true);
     props.deliveryDetailsHandler(data);
   };
   return (
@@ -48,12 +42,8 @@ const Checkout = (props) => {
                     name="road"
                     className="form-control "
                     placeholder="Road no"
-                    ref={register({ required: true })}
                   />
                 </div>
-                {errors.road && (
-                  <span className="error">This Option is required</span>
-                )}
               </div>
               <div className="form-group ">
                 <div className="input-group ">
@@ -76,12 +66,8 @@ const Checkout = (props) => {
                     name="businessName"
                     className="form-control "
                     placeholder="Business name"
-                    ref={register({ required: true })}
                   />
                 </div>
-                {errors.businessName && (
-                  <span className="error">This Option is required</span>
-                )}
               </div>
               <div className="form-group ">
                 <div className="input-group ">
