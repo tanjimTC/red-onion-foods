@@ -11,7 +11,7 @@ const validate = (values) => {
   if (!values.email) {
     errors.email = "email is Required";
   } else if (
-    !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test(values.email)
+    !/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/i.test(values.email.trim())
   ) {
     errors.email = "please enter a valid email address";
   }
