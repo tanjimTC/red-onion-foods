@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import "./Checkout.css";
 import { Link } from "react-router-dom";
 const Checkout = (props) => {
-  window.scrollTo(0, 0);
+  window.scrollTo(0, 55);
   const { register, handleSubmit, errors } = useForm();
   const Orders = props.cart;
   const subtotal = Orders.reduce((x, y) => x + y.price * y.quantity, 0);

@@ -23,7 +23,7 @@ const validate = (values) => {
   return errors;
 };
 
-const SignIn = () => {
+const SignIn = (props) => {
   window.scrollTo(0, 0);
   const auth = Auth();
   const formik = useFormik({
@@ -94,7 +94,9 @@ const SignIn = () => {
             >
               logged in
             </button>
-            <p className='mt-2' style={{color :'#000'}}>proceed to <Link style={{color :'#f91944 '}} to='/checkout' >check out?</Link></p>
+            {props.cart.length?(<p className='mt-2' style={{color :'#000'}}>proceed to <Link style={{color :'#f91944 '}} to='/checkout' >check out?</Link></p>):(
+              <p className='mt-2' style={{color :'#000'}}>order food <Link style={{color :'#f91944 '}} to='/' > here</Link></p>
+            )}
           </div>
         ) : (
           <React.Fragment>

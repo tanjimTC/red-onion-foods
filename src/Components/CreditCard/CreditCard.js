@@ -5,8 +5,7 @@ import "./CreditCard.css";
 import "react-credit-cards/es/styles-compiled.css";
 import { Link } from "react-router-dom";
 
-const CreditCard = () => {
-  window.scrollTo(0, 0);
+const CreditCard = (props) => {
   const { register, handleSubmit, errors } = useForm();
   const [number, setNumber] = useState("");
   const [name, setName] = useState("");
@@ -138,6 +137,7 @@ const CreditCard = () => {
         </div>
         <center>
         {paid?(<Link
+          onClick={props.resetCart}
           className="review-button btn"
           to="/place-order"
           style={{ textDecoration: "none", color: "white" }}

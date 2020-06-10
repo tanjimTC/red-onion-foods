@@ -71,10 +71,10 @@ function App() {
               <SignUp />
             </Route>
             <Route path="/login">
-              <SignIn />
+              <SignIn cart={cart}/>
             </Route>
             <PrivateRoute path="/payment">
-              <CreditCard />
+              <CreditCard resetCart={resetCart} />
             </PrivateRoute>
             <PrivateRoute path="/place-order">
               <PlaceOrder

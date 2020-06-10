@@ -1,3 +1,15 @@
 .App{
   font-family: 'Rubik', sans-serif;
 }
+@media only screen and (max-width : 600px){
+  h2{
+    font-size: 1.5em;
+  }
+  p{
+    font-size:14px ;
+  }
+  h3{
+    font-size: 1.3em;
+  }
+  
+}

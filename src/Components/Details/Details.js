@@ -9,7 +9,6 @@ const Details = (props) => {
   const [count, setCount] = useState(1);
   const [successMsg, setSuccessMsg] = useState(false);
   useEffect(() => {
-    // const foodID = props.match.params.id;
     const foodDetails = food.find((x) => x.id === parseInt(foodID));
     setFoodDescription(foodDetails);
     window.scrollTo(0, 0);
@@ -30,7 +29,7 @@ const Details = (props) => {
       <div className="row">
         <div className="col-md-6  d-flex justify-content-center align-items-center ">
           <div className="left p-5">
-            <h2>
+            <h2 className='text-left'>
               <b>{foodDescription.foodTitle}</b>
             </h2>
             <p>{foodDescription.foodDescription}</p>
