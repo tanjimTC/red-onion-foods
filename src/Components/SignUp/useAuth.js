@@ -163,7 +163,7 @@ const Auth = () => {
     try {
       await firebaseConfig
         .auth()
-        .signInWithEmailAndPassword(email.value, password.value)
+        .signInWithEmailAndPassword(email.value.trim(), password.value)
         .then((res) => {
           const { displayName, email, photoURL } = res.user;
           const signedInUser = { name: displayName, email, photo: photoURL };
