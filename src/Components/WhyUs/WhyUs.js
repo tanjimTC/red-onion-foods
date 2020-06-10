@@ -11,7 +11,7 @@ const WhyUs = (props) => {
     return (
         <div className='container why-container mt-4'>
             <div >
-                <h3>Why choose us</h3>
+                <h3 className='text-left'>Why choose us</h3>
                 <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum, beatae. <br/> Dolore labore esse earum deleniti, eius quod asperiores molestias ut?</p>
             </div>
             <div className="row">
