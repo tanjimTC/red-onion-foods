@@ -115,7 +115,7 @@ const Checkout = (props) => {
                     {x.foodImage && (
                       <img
                         className="img-fluid p-2"
-                        src={require(`../../Image/${x.foodImage}`)}
+                        src={x.foodImage}
                         alt="d"
                       />
                     )}

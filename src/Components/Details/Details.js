@@ -84,7 +84,7 @@ const Details = (props) => {
           {foodDescription.foodImage && (
             <img
               className="img-fluid"
-              src={require(`../../Image/${foodDescription.foodImage}`)}
+              src={foodDescription.foodImage}
               alt="foodImage"
             />
           )}

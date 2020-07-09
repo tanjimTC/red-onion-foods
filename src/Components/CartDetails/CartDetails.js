@@ -28,7 +28,7 @@ const CartDetails = (props) => {
                 {x.foodImage && (
                   <img
                     className="img-fluid p-3"
-                    src={require(`../../Image/${x.foodImage}`)}
+                    src={x.foodImage}
                     alt="d"
                   />
                 )}
