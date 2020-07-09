@@ -5,8 +5,8 @@ const PlaceOrder = (props) => {
   window.scrollTo(0, 0);
   const auth = useAuth();
   return (
-    <div className="container my-5">
-      <div className="row align-items-center">
+    <div className="my-5">
+      <div className="row ml-0 mr-0 align-items-center">
         <div className="col-md-8 col-xs-6">
           <div className="place-order-left p-4">
             <img
@@ -16,7 +16,7 @@ const PlaceOrder = (props) => {
             />
           </div>
         </div>
-        <div className="col-md-4 col-xs-6 p-4">
+        <div className="col-md-4 col-xs-6 p-3">
           <div className="place-order-right p-4">
             <img
               className="img-fluid w-25"
@@ -27,6 +27,7 @@ const PlaceOrder = (props) => {
             <div className="location">
               <p>
                 Your location :<br />
+                Order id : {props.orderId} <br />
                 <small>
                   {props.deliveryDetails.place ? (
                     <React.Fragment>

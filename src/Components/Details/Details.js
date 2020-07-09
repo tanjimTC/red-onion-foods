@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import "./Details.css";
-import { food } from "../../data/food";
 import { useParams } from "react-router-dom";
 
 const Details = (props) => {
@@ -9,9 +8,13 @@ const Details = (props) => {
   const [count, setCount] = useState(1);
   const [successMsg, setSuccessMsg] = useState(false);
   useEffect(() => {
-    const foodDetails = food.find((x) => x.id === parseInt(foodID));
-    setFoodDescription(foodDetails);
-    window.scrollTo(0, 0);
+    fetch('http://localhost:4000/foods')
+    .then(res=>res.json())
+    .then(data =>{
+      const foodDetails = data.find((x) => x.id === parseInt(foodID));
+      setFoodDescription(foodDetails);
+      window.scrollTo(0, 0);
+    })
   }, [foodID]);
 
   const handleClick = () => {

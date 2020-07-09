@@ -15,6 +15,7 @@ import PlaceOrder from "./Components/PlaceOrder/PlaceOrder";
 import CreditCard from "./Components/CreditCard/CreditCard";
 import Privacy from "./Components/Privacy/Privacy";
 import Terms from "./Components/Terms/Terms";
+import Inventory from "./Components/Inventory";
 function App() {
   const initialState = JSON.parse(localStorage.getItem("cart")) || [];
   const [cart, setCart] = useState(initialState);
@@ -73,8 +74,15 @@ function App() {
             <Route path="/login">
               <SignIn cart={cart}/>
             </Route>
+            <Route path='/inv'>
+              <Inventory/>
+            </Route>
             <PrivateRoute path="/payment">
-              <CreditCard resetCart={resetCart} />
+              <CreditCard 
+                resetCart={resetCart} 
+                deliveryDetails={deliveryDetails}
+                cart={cart}
+              />
             </PrivateRoute>
             <PrivateRoute path="/place-order">
               <PlaceOrder

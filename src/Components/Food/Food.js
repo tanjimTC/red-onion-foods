@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { food } from "../../data/food";
 import SingleFood from "../SingleFood/SingleFood";
 import "./Food.css";
 import { Link } from "react-router-dom";
@@ -8,12 +7,15 @@ const Food = (props) => {
   const [selectedFood, setSelectedFood] = useState("lunch");
   const [foods, setFoods] = useState([]);
   useEffect(() => {
-    let data = food;
-    const data2 = data.filter(
-      (x) =>
-        x.foodCategory.toLowerCase() === selectedFood.toString().toLowerCase()
-    );
-    setFoods(data2);
+    fetch('http://localhost:4000/foods')
+    .then(res=> res.json())
+    .then(data=> {
+      const data2 = data.filter(
+        (x) =>
+          x.foodCategory.toLowerCase() === selectedFood.toString().toLowerCase()
+      );
+      setFoods(data2);
+    });
   }, [selectedFood]);
   return (
     <div className="container mt-5">
