@@ -12,7 +12,8 @@ const SingleFood = (props) => {
         {foodImage && (
           <img
             className="img-fluid card-image-top"
-            src={require(`../../Image/${foodImage}`)}
+            // src={require(`../../Image/${foodImage}`)}
+            src={foodImage}
             alt="d"
           />
         )}
