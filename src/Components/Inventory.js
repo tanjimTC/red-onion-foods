@@ -4,7 +4,7 @@ const Inventory = () => {
   const { register, handleSubmit, errors } = useForm();
   const onSubmit = (data) => {
     console.log(data);
-    fetch("http://localhost:4000/addFoods", {
+    fetch("https://tranquil-ridge-31876.herokuapp.com/addFoods", {
       method: "POST",
       body: JSON.stringify(data),
       headers: {

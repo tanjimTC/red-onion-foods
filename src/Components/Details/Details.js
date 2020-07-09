@@ -8,7 +8,7 @@ const Details = (props) => {
   const [count, setCount] = useState(1);
   const [successMsg, setSuccessMsg] = useState(false);
   useEffect(() => {
-    fetch('http://localhost:4000/foods')
+    fetch('https://tranquil-ridge-31876.herokuapp.com/foods')
     .then(res=>res.json())
     .then(data =>{
       const foodDetails = data.find((x) => x.id === parseInt(foodID));

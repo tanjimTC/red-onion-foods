@@ -19,7 +19,7 @@ const CreditCard = (props) => {
       payment: payment,
       items: props.cart,
     };
-    fetch("http://localhost:4000/placeOrder", {
+    fetch("https://tranquil-ridge-31876.herokuapp.com/placeOrder", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

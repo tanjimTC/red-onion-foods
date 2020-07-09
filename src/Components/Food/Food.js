@@ -7,7 +7,7 @@ const Food = (props) => {
   const [selectedFood, setSelectedFood] = useState("lunch");
   const [foods, setFoods] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:4000/foods')
+    fetch('https://tranquil-ridge-31876.herokuapp.com/foods')
     .then(res=> res.json())
     .then(data=> {
       const data2 = data.filter(
